@@ -26,7 +26,8 @@ namespace MyIdentityServer
                 .AddTestUsers(ConfigData.GetUsers());
 
 
-            services.AddControllers();
+            //services.AddControllers();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +37,12 @@ namespace MyIdentityServer
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -45,6 +52,7 @@ namespace MyIdentityServer
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
 
             app.Run(handler =>

@@ -1,7 +1,6 @@
 /*
 https://localhost:44343/.well-known/openid-configuration
 */
-
 {
     "issuer": "https://dps.qikan.com",
     "jwks_uri": "https://localhost:44343/.well-known/openid-configuration/jwks",
@@ -20,6 +19,8 @@ https://localhost:44343/.well-known/openid-configuration
     "scopes_supported": [
         "openid",
         "profile",
+        "scope1",
+        "scope2",
         "offline_access"
     ],
     "claims_supported": [
